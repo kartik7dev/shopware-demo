@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>DockwareProductReviews</name>
+        <label>Product Review Integration (Sample App)</label>
+        <description>A sample app by dockware</description>
+        <author>dasistweb GmbH</author>
+        <copyright>(c) by dasistweb GmbH</copyright>
+        <version>1.4.0</version>
+        <icon>Resources/config/plugin.png</icon>
+        <license>MIT</license>
+
+    </meta>
+
+    <setup>
+        <secret>dockware-dev</secret>
+        <registrationUrl>http://server/app/setup/registration.php</registrationUrl>
+    </setup>
+
+    <permissions>
+        <read>product</read>
+        <update>order</update>
+        <read>product_review</read>
+        <create>product_review</create>
+    </permissions>
+
+    <admin>
+        <base-app-url>http://localhost:1000/app/admin</base-app-url>
+
+        <action-button action="addReview" entity="order" view="detail" url="http://server/app/admin/order/add-review.php">
+            <label>Add Review</label>
+        </action-button>
+
+    </admin>
+
+    <webhooks>
+        <webhook name="order-placed" event="checkout.order.placed" url="http://server/app/event/order-placed.php"/>
+    </webhooks>
+
+
+    <custom-fields>
+        <custom-field-set>
+            <name>dockware_product_reviews_set</name>
+            <label>Dockware Product Reviews Set</label>
+            <related-entities>
+                <order/>
+            </related-entities>
+            <fields>
+                <text name="dockware_product_reviews_exported_date">
+                    <position>1</position>
+                    <label>Exported Date</label>
+                </text>
+            </fields>
+        </custom-field-set>
+    </custom-fields>
+
+</manifest>
