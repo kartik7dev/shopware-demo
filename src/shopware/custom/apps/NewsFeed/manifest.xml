@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>NewsFeed</name>
+        <label>News Feed (Sample App)</label>
+        <description>A sample app by dockware</description>
+        <author>Kartikeyan Kothari</author>
+        <version>1.0.0</version>
+        <license>No license</license>
+
+    </meta>
+
+   <admin>
+     <base-app-url>http://localhost:1000/app/admin/index.html</base-app-url>
+   </admin>
+
+   
+
+   
+</manifest>
