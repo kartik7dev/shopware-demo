@@ -14,6 +14,10 @@
      <base-app-url>http://localhost:1000/app/admin/index.html</base-app-url>
    </admin>
 
+   <permissions>
+        <read>newsfeed</read>
+    </permissions>
+
    
 
    
