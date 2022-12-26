@@ -1,19 +1,11 @@
-# Product Reviews (Sample App)
+# News Feed App (Sample App)
 
 This is an easy sample for the Shopware 6 app system in combination with dockware (or any other Docker image).
 
-It demonstrates the implementation of an external product review application.
+It demonstrates the implementation of an external new feed application on the storefront using Vuejs and Symphony application.
 All Shopware orders will be transferred to this external system.
 
-Afterwards users can write product reviews in our external system, which are then
-automatically transferred back to Shopware, where they can be seen on the product detail page.
-
-Our goal is to offer a simple plug'n'play setup of a Shopware App with dockware containers.
-You can use this for testing, as a dev-playground or just to see how it would work.
-
-The backend service has been written in PHP from scratch. So no framework or anything else is used in there.
-It's definitely no perfect integration, and no one of us thinks it is ;)
-So please keep this in mind.
+The number of news articles shown can be configured from the Shopware Extension configuration
 
 ## Installation
 
@@ -42,38 +34,6 @@ Just select a product, write a review and submit the form.
 If everything worked, the review should now be visible on the product detail page in Shopware.
 
 ## Technical Features
-
-### Hooks
-
-When you place an order, a hook is automatically called to our backend service.
-This contains the order and our backend service processes it for you.
-
-### Custom Fields
-
-The app creates a custom field set in the order entity.
-This contains an "exported_date" string.
-
-When an order is placed, the external backend service will automatically update that field in Shopware after
-everything was processed correctly.
-
-### App Scripts - Storefront
-
-The PDP has been modified to show the "Dockware Product Review" count in the buy-box.
-This is coming from an App Script.
-
-### App Scripts - Custom Endpoint
-
-We have created a custom Storefront route that returns the reviews of a product using JSON.
-
-Just use this URL and provide your product number
-
-```bash
-http://localhost/storefront/script/dockware-reviews?productNumber=xyz 
-```
-
-### App Configuration
-
-You can open the configuration in the Admin and turn off the count display on the PDP page.
 
 ### Admin Extension SDK
 
@@ -105,11 +65,6 @@ So all shops as well as received orders are saved in the "_storage" folder and c
 
 All interesting requests to our app system are automatically logged.
 So here you can see what Shopware sends to our backend service, and what is happening under the hood.
-
-#### Product Review
-
-The frontend of our application can be opened with `http://localhost:1000`.
-It allows you to search for orders, and write reviews for products of those orders.
 
 ### Connection between containers
 
